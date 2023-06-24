@@ -24,6 +24,15 @@ python app.py
 
 ## Testing
 
+To run all tests:
+
 ```shell
+python -m unittest
+```
+
+To run individual tests:
+
+```shell
+python test_calc.py
 python test_app.py
 ```

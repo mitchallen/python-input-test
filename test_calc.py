@@ -1,21 +1,22 @@
 # Author: Mitch Allen
 
 # To run:
-#   python test_app.py
-#   python -m unittest test_app.py
+#   python test_calc.py
+#   python -m unittest test_calc.py
 #   python -m unittest 
 
 import io
 import unittest
 from unittest.mock import patch
-from app import app
+from calc import Calc
 
-class MainTest(unittest.TestCase):
+class CalcTest(unittest.TestCase):
 
     def verify_output(self,user_input,expected_output):
         with patch('sys.stdout', new=io.StringIO()) as fake_stdout:
             with patch('builtins.input', side_effect=user_input):
-                app()
+                c = Calc()
+                c.run()
 
             self.assertIn(expected_output, fake_stdout.getvalue())
 
