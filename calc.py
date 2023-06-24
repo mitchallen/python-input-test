@@ -33,6 +33,8 @@ class Calc:
             
             command = args[0]
 
+            value = 0.0
+
             if len(args) > 1:
                 strValue = args[1]
                 try: 
@@ -49,5 +51,7 @@ class Calc:
                 case 'quit':
                     print("Bye!")
                     return
+                case _:
+                    print("invalid command")
                 
             print()  # new line to keep things clean
