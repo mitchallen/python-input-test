@@ -21,17 +21,22 @@ class MainTest(unittest.TestCase):
 
     def test_quit(self):
         user_input = ['quit']
-        expected_output = f"Bye!"
+        expected_output = "Bye!"
         self.verify_output(user_input,expected_output)
 
     def test_add(self):
         user_input = ['add 5', 'quit']
-        expected_output = f"total: 5.0"
+        expected_output = "total: 5.0"
         self.verify_output(user_input,expected_output)
 
     def test_sub(self):
         user_input = ['sub 5', 'quit']
-        expected_output = f"total: -5.00"
+        expected_output = "total: -5.00"
+        self.verify_output(user_input,expected_output)
+
+    def test_invalid_command(self):
+        user_input = ['bogus', 'quit']
+        expected_output = "invalid command"
         self.verify_output(user_input,expected_output)
 
 if __name__ == '__main__':
